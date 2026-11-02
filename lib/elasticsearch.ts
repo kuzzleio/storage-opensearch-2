@@ -142,7 +142,7 @@ export class OpenSearch {
   public _config: StorageEngineElasticsearch;
 
   private readonly logger = global.kuzzle.log.child(
-    "service:storage:elasticsearch:7",
+    "service:storage:opensearch:2",
   );
 
   constructor(
@@ -212,7 +212,7 @@ export class OpenSearch {
       this.logger.warn(
         [
           "Your dynamic mapping policy is set to 'true' for new fields.",
-          "Elasticsearch will try to automatically infer mapping for new fields, and those cannot be changed afterward.",
+          "OpenSearch will try to automatically infer mapping for new fields, and those cannot be changed afterward.",
           'See the "services.storageEngine.commonMapping.dynamic" option in the kuzzlerc configuration file to change this value.',
         ].join("\n"),
       );
@@ -3868,7 +3868,7 @@ export class OpenSearch {
 
     esState = esStateEnum.AWAITING;
 
-    this.logger.info("[ℹ] Trying to connect to Elasticsearch...");
+    this.logger.info("[ℹ] Trying to connect to OpenSearch...");
 
     while (esState !== esStateEnum.OK) {
       try {
@@ -3878,11 +3878,11 @@ export class OpenSearch {
         });
 
         if (health.body.number_of_pending_tasks === 0) {
-          this.logger.info("[✔] Elasticsearch is ready");
+          this.logger.info("[✔] OpenSearch is ready");
           esState = esStateEnum.OK;
         } else {
           this.logger.info(
-            `[ℹ] Still waiting for Elasticsearch: ${health.body.number_of_pending_tasks} cluster tasks remaining`,
+            `[ℹ] Still waiting for OpenSearch: ${health.body.number_of_pending_tasks} cluster tasks remaining`,
           );
           await Bluebird.delay(1000);
         }
@@ -3942,6 +3942,10 @@ export class OpenSearch {
 
         item[action]._index = alias;
 
+        // Not dead code: OpenSearch has no mapping types and refuses a bulk
+        // action carrying `_type` ("Action/metadata line [1] contains an
+        // unknown parameter [_type]", BulkRequestParser.java:247 on 2.19.0
+        // and 3.0.0). Dropping it keeps legacy `bulk:import` payloads working.
         if (item[action]?._type) {
           item[action]._type = undefined;
         }
