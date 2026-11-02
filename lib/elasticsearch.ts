@@ -252,7 +252,7 @@ export class OpenSearch {
    */
   info() {
     const result: InfoResult = {
-      type: "elasticsearch",
+      type: "opensearch",
       version: this._esVersion?.number ?? "",
     };
 
