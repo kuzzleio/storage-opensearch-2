@@ -1,3 +1,14 @@
+## [1.0.0-beta.4](https://github.com/kuzzleio/storage-opensearch-2/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2026-11-02)
+
+### Features
+
+* close the engine client on Kuzzle's shutdown ([6de0900](https://github.com/kuzzleio/storage-opensearch-2/commit/6de09009dff76dc4c1d977ed5d6ac3bc57e5bd54)), closes [kuzzleio/kuzzle#3141](https://github.com/kuzzleio/kuzzle/issues/3141)
+
+### Bug Fixes
+
+* name OpenSearch in the driver's debug messages ([07e5b34](https://github.com/kuzzleio/storage-opensearch-2/commit/07e5b349b3fa940327f96a1d5df3542f13ea917d)), closes [kuzzleio/kuzzle#3143](https://github.com/kuzzleio/kuzzle/issues/3143)
+* report "opensearch" as the engine family ([9535bbb](https://github.com/kuzzleio/storage-opensearch-2/commit/9535bbb154b55f7f0e6fb9d5cd9d0d14d398ca71)), closes [kuzzleio/kuzzle#3133](https://github.com/kuzzleio/kuzzle/issues/3133)
+
 ## [1.0.0-beta.3](https://github.com/kuzzleio/storage-opensearch-2/compare/v1.0.0-beta.2...v1.0.0-beta.3) (2026-11-02)
 
 ### Dependencies
