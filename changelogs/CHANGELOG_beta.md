@@ -1,3 +1,9 @@
+## [1.0.1-beta.1](https://github.com/kuzzleio/storage-opensearch-2/compare/v1.0.0...v1.0.1-beta.1) (2026-11-12)
+
+### Bug Fixes
+
+* report why the engine does not answer at startup, and fail on what waiting cannot fix ([7972733](https://github.com/kuzzleio/storage-opensearch-2/commit/797273380cf2f1d6fa4d0109d6bf26b8381122bd)), closes [kuzzleio/storage-es-8#9](https://github.com/kuzzleio/storage-es-8/issues/9)
+
 ## [1.0.0-beta.4](https://github.com/kuzzleio/storage-opensearch-2/compare/v1.0.0-beta.3...v1.0.0-beta.4) (2026-11-02)
 
 ### Features
