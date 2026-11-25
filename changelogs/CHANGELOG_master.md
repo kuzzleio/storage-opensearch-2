@@ -1,3 +1,13 @@
+## [1.1.0](https://github.com/kuzzleio/storage-opensearch-2/compare/v1.0.1...v1.1.0) (2026-11-25)
+
+### Features
+
+* **search:** allow min_score and track_scores, add search.additionalBodyKeys ([347a9a5](https://github.com/kuzzleio/storage-opensearch-2/commit/347a9a549d05f9b3bd45d2ae3637b612eaf6da2d))
+
+### Bug Fixes
+
+* **release:** publish the search body keys beta to npm ([3160e73](https://github.com/kuzzleio/storage-opensearch-2/commit/3160e73e0d715ded8e9daa3c9d4bbdcbea2241a4))
+
 ## [1.0.1](https://github.com/kuzzleio/storage-opensearch-2/compare/v1.0.0...v1.0.1) (2026-11-12)
 
 ### Bug Fixes
